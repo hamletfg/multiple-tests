@@ -1,4 +1,5 @@
-import { browser } from '@wdio/globals'
+import { $ } from '@wdio/globals'
+import Page from './multiplePage.js';
 
 export default class Page {
     open () {
