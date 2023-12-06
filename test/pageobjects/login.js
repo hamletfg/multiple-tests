@@ -21,9 +21,10 @@ class LoginPage extends Page {
         await expect(this.loginError).toBeExisting
     }
 
-    async validLogin (validUserName, validPassword) {
-        await this.login(validUserName, validPassword)
-        await expect(this.swagLabsHeader).toBeExisting()
+    async logout () {
+        await this.hamburgerMenu.click();
+        await this.logoutBtn.click();
+        await expect(this.btnLogin).toBeExisting();
     }
 
     open () {
