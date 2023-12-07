@@ -1,5 +1,5 @@
 import { $ } from '@wdio/globals'
-import Page from './multiplePage.js';
+import Page from './page.js';
 
 export default class Page {
     open () {

@@ -1,4 +1,5 @@
 import { $ } from '@wdio/globals'
+import Page from './page.js';
 
 class products extends Page {
 
@@ -9,5 +10,7 @@ class products extends Page {
     get firstNameField () { return $('#first-name'); }
     get lastNameField () { return $('#last-name'); }
     get postalCodeField () { return $('#postal-code'); }
+
+    
 
 }
