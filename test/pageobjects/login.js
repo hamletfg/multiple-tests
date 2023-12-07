@@ -16,6 +16,7 @@ class LoginPage extends Page {
         await this.loginButton.click()
     }
 
+    
     async errorLogin (errorUserName, errorPassword) {
         await this.login(errorUserName, errorPassword)
         await expect(this.loginError).toBeExisting

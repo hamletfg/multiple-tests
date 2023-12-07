@@ -1,7 +1,7 @@
 import { $ } from '@wdio/globals'
 import Page from './page.js';
 
-class products extends Page {
+class Products extends Page {
 
     get checkoutYourInfo () { return $('#checkout_info_container'); }
     get cancelButton () { return $('#cancel'); }
