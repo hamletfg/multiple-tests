@@ -10,7 +10,7 @@ describe('Login to Swag Labs', () => {
 
 /*describe('Adding items to the cart', () => {
     it('should add the backpack and t-shirt to the cart', async () =>{
-        await 
+        await ProductsPage.addingToCart(ProductsPage.addBackpack, ProductsPage.backpackDetails)
     })
 })*/
 

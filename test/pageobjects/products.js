@@ -10,17 +10,17 @@ class Products extends Page {
 
     // Selectors for adding items to cart
     get shoppingCart () { return $('#shopping_cart_container'); }
-    get addToCartBackpack () { return $('#add-to-cart-sauce-labs-backpack'); }
+    get addBackpack () { return $('#add-to-cart-sauce-labs-backpack'); }
     get backpackDetails () { return $('//div[@class="inventory_item_desc"][contains(text(),"Sly Pack")]'); }
-    get addToCartTShirt () { return $('#add-to-cart-sauce-labs-bolt-t-shirt'); }
+    get addTShirt () { return $('#add-to-cart-sauce-labs-bolt-t-shirt'); }
     get tShirtDetails () { return $('//div[@class="inventory_item_desc"][contains(text(),"American Apparel")]'); }
 
-    async addingToCart (selectorProducts, productDetails) {
+    async addingToCart (productOne, productTwo, productDetails) {
         await LoginPage.open();
 
         await LoginPage.login('standard_user', 'secret_sauce');
         await expect(this.loggedIn).toBeExisting();
-        await selectorProducts.click();
+        await productOne.click();
         await expect(productDetails).toBeExisting();
 
         await this.addToCart.click();
