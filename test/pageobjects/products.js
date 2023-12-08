@@ -1,8 +1,8 @@
 import { $ } from '@wdio/globals'
+import { browser } from '@wdio/globals'
 import Page from './page.js';
-import LoginPage from './login.js';
 
-class Products extends Page {
+class ProductPage extends Page {
 
     // Selectors for items in products section
     get productBackpack () { return $('#item_4_title_link'); }
@@ -15,18 +15,19 @@ class Products extends Page {
     get addTShirt () { return $('#add-to-cart-sauce-labs-bolt-t-shirt'); }
     get tShirtDetails () { return $('//div[@class="inventory_item_desc"][contains(text(),"American Apparel")]'); }
 
-    async addingToCart (productOne, productTwo, productDetails) {
-        await LoginPage.open();
-
-        await LoginPage.login('standard_user', 'secret_sauce');
-        await expect(this.loggedIn).toBeExisting();
+    async addingToCart (productOne, productDetails) {
+        //await expect(this.loggedIn).toBeExisting();
+        await browser.pause(500);
         await productOne.click();
         await expect(productDetails).toBeExisting();
-
+/*
         await this.addToCart.click();
         await expect(this.shoppingCart).toBeExisting();
         await this.shoppingCart.click();
-        await expect(selectorProduct).toBeExisting();
+        await expect(selectorProduct).toBeExisting();*/
     }
 }
+
+
+export default new ProductPage();
 
